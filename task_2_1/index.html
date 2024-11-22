@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Todo app</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>My professional ToDo list</h1>
+      <div class="user-nav">
+        <button class="header-btn">Добавить</button>
+      </div>
+    </header>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="completed">Завершённые</button>
+      <button class="filter-btn" data-filter="waiting">Ожидают завершения</button>
+    </div>
+    <div class="todo-list">
+      
+    </div>
+    <div class="drawer">
+      <div class="drawer__content">
+        <div class="drawer__title">Добавление задачи</div>
+        
+        <textarea class="textarea"></textarea>
+        <button class="add-btn">Добавить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
