@@ -4,10 +4,10 @@ const chunkArray = (array, size) => {
   if (Array.isArray(array) && typeof size == 'number') {
     //страницы с товарами 
     const result = [];
-    //количество отображаемых элементов на странице
-    const pageSize = Math.ceil(array.length / size);
+    //количество страниц
+    const pageCount = Math.ceil(array.length / size);  //size - кол-во карточек на странице 
 
-    for (let i = 1; i <= pageSize; i++) {
+    for (let i = 1; i <= pageCount; i++) {
       //i -  текущая страница
       result.push(array.slice(i * size - size, i * size))
     }
