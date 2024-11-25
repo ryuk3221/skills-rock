@@ -1,6 +1,8 @@
 class Slider {
 
   constructor(selector, params) {
+    const self = this;
+
     this.selector = selector;
     this.params = params;
 
@@ -20,21 +22,21 @@ class Slider {
     this.delta = this.sliderItems[0].offsetWidth + this.spaceBetween;
     //текущий слайд
     this.currentSlide = 0;
-    
+
     //если передан обьект с селекторами кнопок навигации
     if (params.controls) {
       this.controls = {
         nextEl: params.controls.nextEl,
         prevEl: params.controls.prevEl
       }
-      
+
       //вешаю обработчик, чтобы отследить клики по кнопкам
       window.addEventListener('click', function (event) {
         if (event.target.closest(params.controls.nextEl)) {
-          slider.handleNext();
+          self.handleNext();
         }
         if (event.target.closest(params.controls.prevEl)) {
-          slider.handlePrev();
+          self.handlePrev();
         }
       });
     }
@@ -49,10 +51,10 @@ class Slider {
         } else {
           this.currentSlide++;
           this.elementSlider.style.transform = `translateX(-${this.delta * this.currentSlide}px)`;
-        } 
+        }
       }, this.autoplaySpeed);
     }
-    
+
     this.init();
   }
 
@@ -63,7 +65,7 @@ class Slider {
     this.elementSlider.style.transition = '.3s';
     this.elementSlider.style.transform = `translateX(0)`;
 
-    
+
   }
 
   handleNext() {
@@ -84,7 +86,7 @@ class Slider {
           } else {
             this.currentSlide++;
             this.elementSlider.style.transform = `translateX(-${this.delta * this.currentSlide}px)`;
-          } 
+          }
         }, this.autoplaySpeed);
       }
     }
@@ -108,14 +110,14 @@ class Slider {
           } else {
             this.currentSlide++;
             this.elementSlider.style.transform = `translateX(-${this.delta * this.currentSlide}px)`;
-          } 
+          }
         }, this.autoplaySpeed);
       }
     }
   }
 }
 
-const slider = new Slider('.slider', {
+const slider1 = new Slider('.slider', {
   spaceBetween: 10,
   autoplay: true,
   autoplaySpeed: 3000,
